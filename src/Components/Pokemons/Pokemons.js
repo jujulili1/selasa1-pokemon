@@ -2,13 +2,24 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const Head = styled.div`
+justify-content: center;
+display:flex;
+`;
+
 const CardList = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    
+    
 `;
 
 const Card = styled.div`
+border-radius:10%;
+border:1px solid teal;
+margin:20px;
+background-color: pink;
     width: 150px;
     word-break: break;
     & img {
@@ -41,6 +52,9 @@ function Pokemons() {
     console.log(pokemons.results);
     return (
         <div>
+            <Head>
+            <h1>PokeDex</h1>
+            </Head>
             <CardList>
                 {pokemons.results !== undefined &&
                     pokemons.results.map((pokemon) => {
